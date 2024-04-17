@@ -2,23 +2,29 @@ import React from 'react'
 import Sidebar from '../components/Sidebar'
 
 function Home() {
-    return (<div>
-        <div className='flex '>
+    return (<>
 
-            <div className=' sidebar w-[22rem]  bg-black'>Sidebar</div>
 
-            <div className='flex flex-col w-full h-full justify-center items-center '>
-                <div className='w-full h-[4.5rem] bg-gray-400 border-lime-800 border-[10px]'  ></div>
+        <div className='Home flex w-screen justify-center items-center'>
 
-               <div className='w-full h-auto bg-red-500  border-lime-800 border-[10px]'></div> 
+
+            <Sidebar />
+
+            <div className=' w-full h-full pr-5  py-5 bg-black'>
+
+
+                <div className='w-full h-full greygra rounded-lg'></div>
+
+
             </div>
+
 
         </div>
 
-        <div className='w-full h-[4.5rem] bg-green-300'></div>
+        <div className='playerNav w-screen h-[4.5rem]'></div>
 
-    </div>
-    )
+
+    </>)
 }
 
 export default Home

@@ -9,5 +9,21 @@ body, html {
     box-sizing: border-box;
 }
 .sidebar{
+
+}
+
+
+.Home{
+
     height: calc(100vh - 4.5rem)
+
+}
+
+.greygra{
+    background: rgb(46,46,46);
+    background: linear-gradient(153deg, rgba(46,46,46,1) 0%, rgba(10,10,10,1) 100%);
+}
+.greygra2{
+    background: rgb(27,27,27);
+   
 }
