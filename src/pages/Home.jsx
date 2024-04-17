@@ -1,5 +1,6 @@
 import React from 'react'
 import Sidebar from '../components/Sidebar'
+import PlayerNav from '../components/PlayerNav'
 
 function Home() {
     return (<>
@@ -21,7 +22,7 @@ function Home() {
 
         </div>
 
-        <div className='playerNav w-screen h-[4.5rem] bg-[#030303]'></div>
+        <PlayerNav/>
 
 
     </>)
