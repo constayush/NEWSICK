@@ -3,6 +3,7 @@ import Sidebar from '../components/Sidebar'
 import PlayerNav from '../components/PlayerNav'
 
 function Home() {
+    window.location.hash = ''
     return (<>
 
 
