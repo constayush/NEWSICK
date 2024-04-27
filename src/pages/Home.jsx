@@ -15,14 +15,11 @@ function Home(props) {
 
     useEffect(() => {
 
-
         Spotify.setAccessToken(token)
         Spotify.getMe().then((user) => {
             setUserName(user.display_name)
             setUserPfp(user.images[1].url ? user.images[1].url : "not available")
         })
-
-
 
     })
 
