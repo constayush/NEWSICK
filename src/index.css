@@ -13,11 +13,26 @@ body, html {
 }
 
 
-.Home{
 
-    height: calc(100vh - 7rem)
 
-}
+
+    @media only screen and (min-width: 768px) {
+       .Home{ 
+
+       height: calc(100vh - 7rem)
+
+    }
+      }
+    
+      @media only screen and (max-width: 767px) {
+        .Home{ 
+ 
+        height: calc(100vh - 8.5rem)
+ 
+     }
+       }
+
+
 .bluegra{
     background: rgb(27,27,27);
 background: linear-gradient(153deg, rgba(27,27,27,1) 0%, rgba(0,0,0,1) 100%);

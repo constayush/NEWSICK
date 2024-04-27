@@ -11,7 +11,7 @@ function Home(props) {
     const token = props.token
     const Spotify = new SpotifyWebApi();
     let [userName, setUserName] = useState(null)
-    let [userPfp , setUserPfp] = useState(null)
+    let [userPfp, setUserPfp] = useState(null)
 
     useEffect(() => {
 
@@ -20,6 +20,11 @@ function Home(props) {
             setUserName(user.display_name)
             setUserPfp(user.images[1].url ? user.images[1].url : "not available")
         })
+
+        Spotify.getUserPlaylists(token).then((playlists) => {
+           console.log(playlists)
+        })
+        console.log(Spotify)
 
     })
 

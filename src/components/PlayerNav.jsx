@@ -8,12 +8,12 @@ import previousIcon from '../../public/asset/prvbtn.svg'
 
 function PlayerNav() {
   return (
-    <div className='playerNav w-screen  h-[7rem] greygra2 flex justify-evenly items-center p-[2rem]'>
+    <div className='playerNav w-screen h-[8.5rem]  md:h-[7rem] greygra2 flex flex-col md:flex-row justify-evenly items-center p-[2rem]'>
 
 
 
 
-      <div className='PlayerInfo flex justify-center items-center w-[25%] gap-6'>
+      <div className='PlayerInfo flex justify-between md:justify-center items-center w-full md:w-[25%] gap-6 '>
 
 
         <img className='songCover h-[40px] w-[40px] border-white border-[1px] ' />
@@ -28,7 +28,7 @@ function PlayerNav() {
 
 
 
-      <div className='flex  flex-col justify-center items-center  w-[35%] gap-4'>
+      <div className='flex  flex-col justify-center items-center w-full  md:w-[35%] gap-4'>
 
         <div className='flex justify-center items-center gap-5'>
           <button> <img className='w-[28px] h-[28px]' src={shuffleIcon} />      </button>
@@ -41,7 +41,7 @@ function PlayerNav() {
 
         
 
-        <div className='flex justify-center items-center w-full gap-[1rem] text-white'><p className='playtimepassed'>0:00</p>
+        <div className='flex justify-center items-center w-full h-fit gap-[1rem] text-white'><p className='playtimepassed'>0:00</p>
           <input type='range' className='h-[1px] w-full'></input>
           <p className='playtimeleft'>0:00</p>
         </div>
@@ -51,7 +51,7 @@ function PlayerNav() {
 
 
 
-      <div className='volumeControlContainer w-[25%] flex justify-center items-center '>
+      <div className='volumeControlContainer w-[25%] hidden justify-center items-center md:flex '>
         <input type='range'></input>
 
       </div>
