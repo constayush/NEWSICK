@@ -2,7 +2,6 @@ import React from 'react'
 
 function Sidebar(props) {
 
-  console.log(props)
   return (
 <div className='Sidebar w-full h-[6.5rem]  md:w-[28rem] md:h-full bg-black py-5 px-5'>
 
