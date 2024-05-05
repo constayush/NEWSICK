@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import playIcon from '../../public/asset/playbtn.svg'
 import nextIcon from '../../public/asset/nextbtn.svg'
 import loopIcon from '../../public/asset/loopbtn.svg'
@@ -6,7 +6,14 @@ import repeatIcon from '../../public/asset/repeatbtn.svg'
 import shuffleIcon from '../../public/asset/shufflebtn.svg'
 import previousIcon from '../../public/asset/prvbtn.svg'
 
-function PlayerNav() {
+function PlayerNav({currentPlayingTrackInfo}) {
+
+
+
+let [timePassed , setTimePassed] = useState(null)
+
+setTimePassed(currentPlayingTrackInfo?.progress_ms / 60000)
+  console.log(currentPlayingTrackInfo)
   return (
     <div className='playerNav w-screen h-[8.5rem]  md:h-[7rem] greygra2 flex flex-col md:flex-row justify-evenly items-center p-[2rem]'>
 
@@ -19,8 +26,8 @@ function PlayerNav() {
         <img className='songCover h-[40px] w-[40px] border-white border-[1px] ' />
 
         <div className='songDetails text-[#c5c3c3]'>
-          <h1 className='songName font-bold'>Song</h1>
-          <p className='songArtist'>Artist</p>
+          <h1 className='songName font-bold'>{currentPlayingTrackInfo?.item?.name}</h1>
+          <p className='songArtist'>{currentPlayingTrackInfo?.item?.artists[0]?.name}</p>
         </div>
 
 
@@ -40,8 +47,9 @@ function PlayerNav() {
 
 
         
+     
 
-        <div className='flex justify-center items-center w-full h-fit gap-[1rem] text-white'><p className='playtimepassed'>0:00</p>
+        <div className='flex justify-center items-center w-full h-fit gap-[1rem] text-white'><p className='playtimepassed'>{}</p>
           <input type='range' className='h-[1px] w-full'></input>
           <p className='playtimeleft'>0:00</p>
         </div>

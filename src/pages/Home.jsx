@@ -13,11 +13,14 @@ function Home(props) {
     let [userName, setUserName] = useState(null)
     let [userPfp, setUserPfp] = useState(null)
     let [playlists, setPlaylists] = useState(null)
+
+let [currentPlayingTrackInfo , setCurrentPlayingTrackInfo] = useState(null);
+    
     useEffect(() => {
 
         Spotify.setAccessToken(token)
 
-        Spotify.
+
 
         Spotify.getMe().then((user) => {
 
@@ -29,10 +32,19 @@ function Home(props) {
         Spotify.getUserPlaylists().then((UserPlaylists) => {
 
             setPlaylists(UserPlaylists)
-            
+
         })
 
-        console.log(playlists , "us")
+
+    }, [])
+
+
+    useEffect(() => {
+
+        Spotify.getMyCurrentPlayingTrack().then((track) => {
+            setCurrentPlayingTrackInfo(track)
+console.log(track)
+        })
 
     }, [])
 
@@ -42,8 +54,6 @@ function Home(props) {
 
 
 
-    console.log(playlists)
-   
 
 
 
@@ -72,7 +82,7 @@ function Home(props) {
 
                             {playlists?.items.map((playlist) => {
 
-                              return  <div className='playlist-con text-[2rem] text-white normalfont'>{playlist.name}</div>
+                                return <div className='playlist-con text-[2rem] text-white normalfont'>{playlist.name}</div>
 
 
                             })}
@@ -91,7 +101,7 @@ function Home(props) {
 
         </div>
 
-        <PlayerNav />
+        <PlayerNav currentPlayingTrackInfo={currentPlayingTrackInfo} />
 
 
     </>)
