@@ -28,7 +28,7 @@ let [currentPlayingTrackInfo , setCurrentPlayingTrackInfo] = useState(null);
             setUserPfp(user.images[1].url ? user.images[1].url : "not available")
 
         })
-
+   
         Spotify.getUserPlaylists().then((UserPlaylists) => {
 
             setPlaylists(UserPlaylists)
@@ -43,7 +43,7 @@ let [currentPlayingTrackInfo , setCurrentPlayingTrackInfo] = useState(null);
 
         Spotify.getMyCurrentPlayingTrack().then((track) => {
             setCurrentPlayingTrackInfo(track)
-console.log(track)
+
         })
 
     }, [])
@@ -82,7 +82,7 @@ console.log(track)
 
                             {playlists?.items.map((playlist) => {
 
-                                return <div className='playlist-con text-[2rem] text-white normalfont'>{playlist.name}</div>
+                                return <div key={playlist.name} className='playlist-con text-[2rem] text-white normalfont'>{playlist.name}</div>
 
 
                             })}

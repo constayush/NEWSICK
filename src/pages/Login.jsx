@@ -17,10 +17,10 @@ function Login() {
       <h1 className='iconfont text-[#cdfdff] text-[10rem]'>NEWSICK</h1>
      
       <a href={accessUrl} className="loginBtn text-[#cdfdff] text-[2rem]">
-        <span class="top-key"></span>
-        <span class="text">Login with <span className='text-[#60ff21]'>spotify</span></span>
-        <span class="bottom-key-1"></span>
-        <span class="bottom-key-2"></span>
+        <span className="top-key"></span>
+        <span className="text">Login with <span className='text-[#60ff21]'>spotify</span></span>
+        <span className="bottom-key-1"></span>
+        <span className="bottom-key-2"></span>
       </a>
 
     </div>)

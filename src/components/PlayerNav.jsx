@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import playIcon from '../../public/asset/playbtn.svg'
 import nextIcon from '../../public/asset/nextbtn.svg'
 import loopIcon from '../../public/asset/loopbtn.svg'
@@ -9,11 +9,14 @@ import previousIcon from '../../public/asset/prvbtn.svg'
 function PlayerNav({currentPlayingTrackInfo}) {
 
 
+let [ timePassed , setTimePassed] = useState("0:00")
 
-let [timePassed , setTimePassed] = useState(null)
+useEffect(()=>{
 
-setTimePassed(currentPlayingTrackInfo?.progress_ms / 60000)
-  console.log(currentPlayingTrackInfo)
+
+ 
+})
+
   return (
     <div className='playerNav w-screen h-[8.5rem]  md:h-[7rem] greygra2 flex flex-col md:flex-row justify-evenly items-center p-[2rem]'>
 
@@ -49,7 +52,7 @@ setTimePassed(currentPlayingTrackInfo?.progress_ms / 60000)
         
      
 
-        <div className='flex justify-center items-center w-full h-fit gap-[1rem] text-white'><p className='playtimepassed'>{}</p>
+        <div className='flex justify-center items-center w-full h-fit gap-[1rem] text-white'><p className='playtimepassed'>{timePassed}</p>
           <input type='range' className='h-[1px] w-full'></input>
           <p className='playtimeleft'>0:00</p>
         </div>
