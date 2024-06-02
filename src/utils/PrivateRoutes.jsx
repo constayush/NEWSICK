@@ -9,7 +9,7 @@ function PrivateRoutes(props) {
 
 const token =  props.token 
 
-console.log(token)
+
   return  token ? <Outlet props={token} /> : <Navigate to='login' />
  
 }

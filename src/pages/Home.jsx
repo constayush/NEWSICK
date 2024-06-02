@@ -13,14 +13,13 @@ function Home(props) {
     let [userName, setUserName] = useState(null)
     let [userPfp, setUserPfp] = useState(null)
     let [playlists, setPlaylists] = useState(null)
-
-let [currentPlayingTrackInfo , setCurrentPlayingTrackInfo] = useState(null);
-    
+    let [totalDuration, setTotalDuration] = useState(0);
+    let [currentPlayingTrackInfo, setCurrentPlayingTrackInfo] = useState(null);
+ 
+    let totalDurationInSec = 0
     useEffect(() => {
 
         Spotify.setAccessToken(token)
-
-
 
         Spotify.getMe().then((user) => {
 
@@ -28,7 +27,7 @@ let [currentPlayingTrackInfo , setCurrentPlayingTrackInfo] = useState(null);
             setUserPfp(user.images[1].url ? user.images[1].url : "not available")
 
         })
-   
+
         Spotify.getUserPlaylists().then((UserPlaylists) => {
 
             setPlaylists(UserPlaylists)
@@ -39,19 +38,29 @@ let [currentPlayingTrackInfo , setCurrentPlayingTrackInfo] = useState(null);
     }, [])
 
 
-    useEffect(() => {
+    setTimeout(    Spotify.getMyCurrentPlayingTrack().then((track) => {
 
-        Spotify.getMyCurrentPlayingTrack().then((track) => {
-            setCurrentPlayingTrackInfo(track)
+        console.log(track + 'track')
 
-        })
+        setCurrentPlayingTrackInfo(track)
 
-    }, [])
+        setTotalDuration(currentPlayingTrackInfo?.item?.duration_ms)
+
+    }),toSec(totalDuration))
+
+    
 
 
 
 
 
+function toSec (x) {
+    
+ 
+      totalDurationInSec = (x/1000)
+  
+
+}
 
 
 
@@ -101,7 +110,7 @@ let [currentPlayingTrackInfo , setCurrentPlayingTrackInfo] = useState(null);
 
         </div>
 
-        <PlayerNav currentPlayingTrackInfo={currentPlayingTrackInfo} />
+        <PlayerNav currentPlayingTrackInfo={currentPlayingTrackInfo} totalDuration={totalDuration} />
 
 
     </>)
