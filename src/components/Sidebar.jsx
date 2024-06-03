@@ -1,5 +1,6 @@
 import React from 'react'
-
+import listIcon from '../../public/asset/listIcon.svg'
+import searchIcon from '../../public/asset/searchIcon.svg'
 function Sidebar(props) {
 
   return (
@@ -12,10 +13,18 @@ function Sidebar(props) {
 <h1 className='text-[1.5rem] md:text-[2rem] text-white normalfont'>{props.userName}</h1>
 
 
+<div className='hidden md:flex flex-col '>
+<button className='bn632-hover bn25  sidebarbtns w-[15rem] h-[2rem]  '><div className=' w-full  icoANiMATIONOnHover justify-center items-center flex gap-6'><p>Search  </p><img className=' w-[1.3rem] h-[1.3rem]' src={searchIcon}></img>  </div></button>  
+<button className='bn632-hover bn25  sidebarbtns w-[15rem] h-[2rem]  '><div className=' w-full  icoANiMATIONOnHover justify-center items-center flex gap-6'><p>Playlist</p> <img className='w-[1.3rem] h-[1.3rem]' src={listIcon}></img>   </div></button> 
+</div>
 
+<label className='md:hidden visible' for="check">
+      <input type="checkbox" id="check"/> 
+      <span></span>
+      <span></span>
+      <span></span>
+</label>
 
-<button className='bn632-hover bn25  sidebarbtns '> Search</button>
-<button className='bn632-hover bn25 sidebarbtns  '>Playlist</button>
 
 </div>
 

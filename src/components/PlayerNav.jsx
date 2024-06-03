@@ -20,7 +20,7 @@ useEffect(()=>{
 })
 
   return (
-    <div className='playerNav w-screen h-[8.5rem]  md:h-[7rem] greygra2 flex flex-col md:flex-row justify-evenly items-center p-[2rem]'>
+    <div className='playerNav w-screen h-fit  md:h-[7rem] greygra2 flex flex-col md:flex-row justify-evenly items-center p-[2rem]'>
 
 
 

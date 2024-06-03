@@ -3,6 +3,8 @@ import Sidebar from '../components/Sidebar'
 import PlayerNav from '../components/PlayerNav'
 import SpotifyWebApi from 'spotify-web-api-js'
 import { useState } from 'react'
+
+
 function Home(props) {
 
 
@@ -79,9 +81,9 @@ function Home(props) {
 
                 <div className='w-full h-full greygra rounded-lg flex justify-center items-center'>
 
-                    <div className='md:w-[100%] md:h-full p-[2rem]'>
+                    <div className='w-100% h-fit md:w-[100%] md:h-full p-[2rem]'>
 
-                        <input type='text' placeholder='Search...'  value={searchText} onChange={(e)=>{ setSearchText(e.target.value) }}  className='fatfont searchbar text-[4rem] text-white '></input>
+                        <input type='text' placeholder='Search...'  value={searchText} onChange={(e)=>{ setSearchText(e.target.value) }}  className='fatfont searchbar text-[1.5rem] md:text-[4rem] text-white '></input>
                         <hr className='mb-[1.2rem]' />
 
                         <div className='flex justify-center items-center flex-col gap-[1.2rem]'>
@@ -90,8 +92,7 @@ function Home(props) {
 
                             {playlists?.items.map((playlist) => {
 
-                                return <div key={playlist.name} className='playlist-con text-[2rem] text-white normalfont'>{playlist.name}</div>
-
+                                return <div key={playlist.name} className='playlist-con  md:text-[2rem] text-white normalfont'>{playlist.name}</div>
 
                             })}
 
