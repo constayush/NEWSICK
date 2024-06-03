@@ -4,7 +4,11 @@ import PlayerNav from '../components/PlayerNav'
 import SpotifyWebApi from 'spotify-web-api-js'
 import { useState } from 'react'
 function Home(props) {
-    window.location.hash = ''
+
+
+
+
+    window.location.hash = ''//removing token form url
 
 
 
@@ -15,8 +19,11 @@ function Home(props) {
     let [playlists, setPlaylists] = useState(null)
     let [totalDuration, setTotalDuration] = useState(0);
     let [currentPlayingTrackInfo, setCurrentPlayingTrackInfo] = useState(null);
- 
+    let [searchText , setSearchText] = useState("")
     let totalDurationInSec = 0
+
+
+
     useEffect(() => {
 
         Spotify.setAccessToken(token)
@@ -34,19 +41,18 @@ function Home(props) {
 
         })
 
+        Spotify.getMyCurrentPlayingTrack().then((track) => {
+
+            setCurrentPlayingTrackInfo(track)
+            setTotalDuration(currentPlayingTrackInfo?.item?.duration_ms)
+    
+        })
+
 
     }, [])
 
 
-    setTimeout(    Spotify.getMyCurrentPlayingTrack().then((track) => {
 
-        console.log(track + 'track')
-
-        setCurrentPlayingTrackInfo(track)
-
-        setTotalDuration(currentPlayingTrackInfo?.item?.duration_ms)
-
-    }),toSec(totalDuration))
 
     
 
@@ -54,13 +60,6 @@ function Home(props) {
 
 
 
-function toSec (x) {
-    
- 
-      totalDurationInSec = (x/1000)
-  
-
-}
 
 
 
@@ -80,9 +79,9 @@ function toSec (x) {
 
                 <div className='w-full h-full greygra rounded-lg flex justify-center items-center'>
 
-                    <div className='md:w-[50%] md:h-full p-[2rem]'>
+                    <div className='md:w-[100%] md:h-full p-[2rem]'>
 
-                        <h1 className='fatfont text-[4rem] text-white '>Playlists</h1>
+                        <input type='text' placeholder='Search...'  value={searchText} onChange={(e)=>{ setSearchText(e.target.value) }}  className='fatfont searchbar text-[4rem] text-white '></input>
                         <hr className='mb-[1.2rem]' />
 
                         <div className='flex justify-center items-center flex-col gap-[1.2rem]'>
@@ -100,7 +99,7 @@ function toSec (x) {
 
 
                     </div>
-                    <div className='md:w-[50%] md:h-full bg-[blue]'></div>
+                    
 
                 </div>
 

@@ -173,3 +173,60 @@ background: linear-gradient(153deg, rgba(27,27,27,1) 0%, rgba(0,0,0,1) 100%);
     right: 0;
     width: 0;
    }
+
+
+   .searchbar{
+width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+   }
+
+
+   .searchbar:focus{
+
+    outline: none;
+
+    border-bottom: #fff 2px solid;
+   }
+
+   .bn632-hover {
+    width: 15rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    height: 55px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 10px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+  }
+  
+  .bn632-hover:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+  }
+  
+  .bn632-hover:focus {
+    outline: none;
+  }
+  
+  .bn632-hover.bn25 {
+    background-image: linear-gradient(
+      to right,
+      #29323c,
+      #485563,
+      #2b5876,
+      #4e4376
+    );
+    box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
+  }
