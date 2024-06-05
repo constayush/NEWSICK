@@ -1,7 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 import listIcon from '../../public/asset/listIcon.svg'
 import searchIcon from '../../public/asset/searchIcon.svg'
 function Sidebar(props) {
+
+
+
+let [isMenuClicked , setIsMenuClicked] = useState(false)
+
+
+
+function toggleMenu (){
+
+console.log(isMenuClicked)
+  setIsMenuClicked(!isMenuClicked);
+  
+
+}
+
+
+
+
+
+
+
+
+
 
   return (
 <div className='Sidebar w-full h-[6.5rem]  md:w-[28rem] md:h-full bg-black py-5 px-5'>
@@ -19,7 +42,7 @@ function Sidebar(props) {
 </div>
 
 <label className='md:hidden visible' for="check">
-      <input type="checkbox" id="check"/> 
+      <input type="checkbox" id="check" onClick={toggleMenu}/> 
       <span></span>
       <span></span>
       <span></span>
