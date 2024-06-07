@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import Sidebar from '../components/Sidebar'
 import PlayerNav from '../components/PlayerNav'
 import SpotifyWebApi from 'spotify-web-api-js'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 
 
 function Home(props) {
@@ -21,8 +21,11 @@ function Home(props) {
     let [playlists, setPlaylists] = useState(null)
     let [totalDuration, setTotalDuration] = useState(0);
     let [currentPlayingTrackInfo, setCurrentPlayingTrackInfo] = useState(null);
-    let [searchText , setSearchText] = useState("")
+    let [searchText, setSearchText] = useState("")
     let totalDurationInSec = 0
+
+    let HomePage = useRef(null);
+    let PlaylistPage = useRef(null);
 
 
 
@@ -47,7 +50,7 @@ function Home(props) {
 
             setCurrentPlayingTrackInfo(track)
             setTotalDuration(currentPlayingTrackInfo?.item?.duration_ms)
-    
+
         })
 
 
@@ -56,7 +59,7 @@ function Home(props) {
 
 
 
-    
+
 
 
 
@@ -74,17 +77,38 @@ function Home(props) {
         <div className='Home flex md:flex-row flex-col w-screen justify-center items-center'>
 
 
-            <Sidebar userPfp={userPfp} userName={userName} playlists={playlists} />
+            <Sidebar HomePageDiv={HomePage.current} PlaylistPageDiv={PlaylistPage.current} userPfp={userPfp} userName={userName} playlists={playlists} />
 
-            <div className=' w-full h-full pr-5 pl-5 md:pl-0 py-5 bg-black'>
+            <div ref={HomePage} className=' w-full h-full pr-5 pl-5 md:pl-0 py-5 bg-black'>
 
 
                 <div className='w-full h-full greygra rounded-lg flex justify-center items-center'>
 
                     <div className='w-100% h-fit md:w-[100%] md:h-full p-[2rem]'>
 
-                        <input type='text' placeholder='Search...'  value={searchText} onChange={(e)=>{ setSearchText(e.target.value) }}  className='fatfont searchbar text-[1.5rem] md:text-[4rem] text-white '></input>
+                        <input type='text' placeholder='Search...' value={searchText} onChange={(e) => { setSearchText(e.target.value) }} className='fatfont searchbar text-[1.5rem] md:text-[4rem] text-white '></input>
                         <hr className='mb-[1.2rem]' />
+
+
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+            <div ref={PlaylistPage} className='PlaylistPage w-full h-full pr-5 pl-5 md:pl-0 py-5 bg-black'>
+                <div className='w-full h-full greygra rounded-lg flex justify-center items-center'>
+
+                    <div className='w-100% h-fit md:w-[100%] md:h-full p-[2rem]'>
+
 
                         <div className='flex justify-center items-center flex-col gap-[1.2rem]'>
 
@@ -98,15 +122,10 @@ function Home(props) {
 
                         </div>
 
-
                     </div>
-                    
 
                 </div>
-
-
             </div>
-
 
         </div>
 

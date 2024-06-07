@@ -16,7 +16,19 @@ function Sidebar(props) {
   
   }
 
+function handleLoadHome (){
+props.PlaylistPageDiv.style.display = "none"
+props.HomePageDiv.style.display = "block"
 
+console.log(props)
+
+}
+function handleLoadPlaylist (){
+
+  props.PlaylistPageDiv.style.display = "block"
+  props.HomePageDiv.style.display = "none"
+  
+}
 
 
 
@@ -25,7 +37,7 @@ function Sidebar(props) {
 
 
   return (<>
-    <div className='menuExpanded w-[100vw] h-[100vh] z-[100000] sticky bg-[red] '></div>
+
     <div className='Sidebar w-full h-[6.5rem] z-0  md:w-[28rem] md:h-full bg-black py-5 px-5'>
 
 
@@ -36,8 +48,8 @@ function Sidebar(props) {
 
 
         <div className='hidden md:flex flex-col '>
-          <button className='bn632-hover bn25  sidebarbtns w-[15rem] h-[2rem]  '><div className=' w-full  icoANiMATIONOnHover justify-center items-center flex gap-6'><p>Search  </p><img className=' w-[1.3rem] h-[1.3rem]' src={searchIcon}></img>  </div></button>
-          <button className='bn632-hover bn25  sidebarbtns w-[15rem] h-[2rem]  '><div className=' w-full  icoANiMATIONOnHover justify-center items-center flex gap-6'><p>Playlist</p> <img className='w-[1.3rem] h-[1.3rem]' src={listIcon}></img>   </div></button>
+          <button onClick={handleLoadHome} className='bn632-hover bn25  sidebarbtns w-[15rem] h-[2rem]  '><div className=' w-full  icoANiMATIONOnHover justify-center items-center flex gap-6'><p>Home  </p><img className=' w-[1.3rem] h-[1.3rem]' src={searchIcon}></img>  </div></button>
+          <button onClick={handleLoadPlaylist} className='bn632-hover bn25  sidebarbtns w-[15rem] h-[2rem]  '><div className=' w-full  icoANiMATIONOnHover justify-center items-center flex gap-6'><p>Playlist</p> <img className='w-[1.3rem] h-[1.3rem]' src={listIcon}></img>   </div></button>
         </div>
 
         <label className='md:hidden visible' onClick={toggleMenu} for="check">
