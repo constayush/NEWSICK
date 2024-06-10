@@ -86,7 +86,7 @@ function Home(props) {
 
                     <div className='w-100% h-fit md:w-[100%] md:h-full p-[2rem]'>
 
-                        <input type='text' placeholder='Search...' value={searchText} onChange={(e) => { setSearchText(e.target.value) }} className='fatfont tracking-wide searchbar text-[1.5rem] md:text-[3rem] text-white '></input>
+                        <input type='text' placeholder='Search...' value={searchText} onChange={(e) => { setSearchText(e.target.value) }} className='fatfont tracking-wider searchbar text-[1.5rem] md:text-[3.5rem] text-white '></input>
                         <hr className='mb-[1.2rem]' />
 
 
@@ -110,6 +110,8 @@ function Home(props) {
                     <div className='w-100% h-fit md:w-[100%] md:h-full p-[2rem]'>
 
 <h1 className='playlisttext text-[#a9d4ff] text-[3.5rem] tracking-wide fatfont'>Playlists</h1>
+
+<hr className='mb-[2rem]'/>
                         <div className='flex justify-center items-center flex-col gap-[1.2rem]'>
 
 

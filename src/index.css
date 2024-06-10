@@ -190,7 +190,7 @@ width: 100%;
 
    .bn632-hover {
    
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 500;
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
@@ -209,7 +209,7 @@ width: 100%;
   }
   
   .bn632-hover:hover {
-    background-position: 100% 0;
+    background-position: 50% 0;
     moz-transition: all .4s ease-in-out;
     -o-transition: all .4s ease-in-out;
     -webkit-transition: all .4s ease-in-out;
@@ -221,14 +221,17 @@ width: 100%;
   }
   
   .bn632-hover.bn25 {
+
+    border: #fff solid .1px;
+
     background-image: linear-gradient(
       to right,
-      #29323c,
-      #485563,
+      #29323c00,
+      #48556300,
       #2b5876,
       #4e4376
     );
-    box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
+   
   }
 
   label{
@@ -307,15 +310,13 @@ width: 100%;
    }
 
 .playlisttext{
-  transition: all .3s ease;
+  transition: all .4s ease-in-out;
+  
 }
 
    .playlisttext:hover{
-
+cursor: pointer;
     letter-spacing: 0.25rem;
+    color: #fff;
 
-    text-shadow: 0 -0.0625em 0 #0c30fb6f, 
-    .05em -0.1em 0 #2cfdfd96, 
-    .05em -0.06em 0 #3d3d3d86, 
-    .05em -0.1em 0 #ffffff40;
    }
