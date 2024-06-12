@@ -305,7 +305,7 @@ width: 100%;
    }
 
 
-   .PlaylistPage{
+   .PlaylistPage, .searchPage{
     display: none;
    }
 

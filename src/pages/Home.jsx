@@ -26,7 +26,7 @@ function Home(props) {
 
     let HomePage = useRef(null);
     let PlaylistPage = useRef(null);
-
+    let searchPage = useRef(null);
 
 
     useEffect(() => {
@@ -77,9 +77,9 @@ function Home(props) {
         <div className='Home flex md:flex-row flex-col w-screen justify-center items-center'>
 
 
-            <Sidebar HomePageDiv={HomePage.current} PlaylistPageDiv={PlaylistPage.current} userPfp={userPfp} userName={userName} playlists={playlists} />
+            <Sidebar SearchPageDiv={searchPage.current} HomePageDiv={HomePage.current} PlaylistPageDiv={PlaylistPage.current} userPfp={userPfp} userName={userName} playlists={playlists} />
 
-            <div ref={HomePage} className=' w-full h-full pr-5 pl-5 md:pl-0 py-5 bg-black'>
+            <div ref={searchPage} className=' w-full h-full pr-5 pl-5 md:pl-0 py-5 bg-black'>
 
 
                 <div className='w-full h-full greygra rounded-lg flex justify-center items-center'>
@@ -101,17 +101,14 @@ function Home(props) {
             </div>
 
 
-
-
-
             <div ref={PlaylistPage} className='PlaylistPage w-full h-full pr-5 pl-5 md:pl-0 py-5 bg-black'>
                 <div className='w-full h-full greygra rounded-lg flex justify-center items-center'>
 
                     <div className='w-100% h-fit md:w-[100%] md:h-full p-[2rem]'>
 
-<h1 className='playlisttext text-[#a9d4ff] text-[3.5rem] tracking-wide fatfont'>Playlists</h1>
+                        <h1 className='playlisttext text-[#a9d4ff] text-[3.5rem] tracking-wide fatfont'>Playlists</h1>
 
-<hr className='mb-[2rem]'/>
+                        <hr className='mb-[2rem]' />
                         <div className='flex justify-center items-center flex-col gap-[1.2rem]'>
 
 
@@ -121,6 +118,32 @@ function Home(props) {
                                 return <div key={playlist.name} className='playlist-con  md:text-[1.5rem] text-white normalfont'>{playlist.name}</div>
 
                             })}
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div ref={HomePage} className='searchPage w-full h-full pr-5 pl-5 md:pl-0 py-5 bg-black'>
+                <div className='w-full h-full greygra rounded-lg flex justify-center items-center'>
+
+                    <div className='w-100% h-fit md:w-[100%] md:h-full p-[2rem]'>
+
+                        <h1 className='playlisttext text-[#a9d4ff] text-[3.5rem] tracking-wide fatfont'>Home</h1>
+
+                        <hr className='mb-[2rem]' />
+                        <div className='flex justify-center items-center flex-col gap-[1.2rem]'>
+
+
+
+                            {/* {playlists?.items.map((playlist) => {
+
+                                return <div key={playlist.name} className='playlist-con  md:text-[1.5rem] text-white normalfont'>{playlist.name}</div>
+
+                            })} */}
 
                         </div>
 
