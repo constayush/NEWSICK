@@ -45,7 +45,7 @@ function handleLoadSearch (){
 
   return (<>
 
-    <div className='Sidebar w-full h-[6.5rem] z-0  md:w-[28rem] md:h-full bg-black py-5 px-5'>
+    <div className='Sidebar w-full hmax-[6.5rem] z-0  md:w-[28rem] md:h-full bg-black py-5 px-5'>
 
 
       <div className='w-full h-full greygra2 rounded-lg flex flex-row md:flex-col  p-[2rem] justify-between md:justify-center items-center gap-[2rem]' >

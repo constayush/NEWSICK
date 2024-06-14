@@ -23,17 +23,30 @@ function Home(props) {
     let [currentPlayingTrackInfo, setCurrentPlayingTrackInfo] = useState(null);
     let [searchText, setSearchText] = useState("")
     let totalDurationInSec = 0
-
     let HomePage = useRef(null);
     let PlaylistPage = useRef(null);
     let searchPage = useRef(null);
-
+    let [newReleases, setNewReleases] = useState(null)
 
     useEffect(() => {
 
         Spotify.setAccessToken(token)
 
+
+        Spotify.getNewReleases().then((newRel) => {
+console.log(newRel)
+            setNewReleases(newRel.albums.items);
+            console.log(newReleases)
+
+        })
+
+
+
+
         Spotify.getMe().then((user) => {
+
+
+
 
             setUserName(user.display_name)
             setUserPfp(user.images[1].url ? user.images[1].url : "not available")
@@ -41,6 +54,7 @@ function Home(props) {
         })
 
         Spotify.getUserPlaylists().then((UserPlaylists) => {
+
 
             setPlaylists(UserPlaylists)
 
@@ -88,10 +102,14 @@ function Home(props) {
                         <h1 className='playlisttext text-[#a9d4ff] text-[3.5rem] tracking-wide fatfont'>Home</h1>
 
                         <hr className='mb-[2rem]' />
-                        <div className='flex justify-center items-center flex-col gap-[1.2rem]'>
+                        <div className='flex justify-center items-center flex-row gap-[3rem] '>
 
 
-                            {/* code for home */}
+                            <div className='NewRel bg-slate-500 h-[8rem] w-[8rem] rounded-lg'></div>
+
+                            <div className='NewRel bg-slate-500 h-[8rem] w-[8rem] rounded-lg'></div>
+
+                            <div className='NewRel bg-slate-500 h-[8rem] w-[8rem] rounded-lg'></div>
 
 
                         </div>
@@ -142,8 +160,8 @@ function Home(props) {
 
                             })}
 
-                            
-                           
+
+
                         </div>
 
                     </div>
@@ -152,7 +170,7 @@ function Home(props) {
             </div>
 
 
-          
+
 
         </div>
 
