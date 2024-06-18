@@ -88,7 +88,7 @@ console.log(newRel)
     return (<>
 
 
-        <div className='Home flex md:flex-row flex-col w-screen justify-center items-center'>
+        {/* <div className='Home h-[85dvh] w-[100dvw] flex md:flex-row flex-col justify-center items-center'>
 
 
             <Sidebar SearchPageDiv={searchPage.current} HomePageDiv={HomePage.current} PlaylistPageDiv={PlaylistPage.current} userPfp={userPfp} userName={userName} playlists={playlists} />
@@ -112,7 +112,7 @@ console.log(newRel)
                             <div className='NewRel bg-slate-500 h-[8rem] w-[8rem] rounded-lg'></div>
 
 
-                        </div>
+                        </div> 
 
                     </div>
 
@@ -172,10 +172,33 @@ console.log(newRel)
 
 
 
+        </div> */}
+
+
+
+
+<div className='w-[100dvw] h-[100dvh]'>
+
+
+<div className='flex w-full h-[85%] bgone'>
+
+
+        <div className='SIDEBAR  h-[100%] w-[20%]  '>
+
+
+
+
+            
         </div>
 
-        <PlayerNav currentPlayingTrackInfo={currentPlayingTrackInfo} totalDuration={totalDuration} />
 
+        <div className='mainPAGE  h-[100%] w-[80%]   '></div>
+
+
+</div>        
+
+        <PlayerNav currentPlayingTrackInfo={currentPlayingTrackInfo} totalDuration={totalDuration} />
+</div>
 
     </>)
 }
