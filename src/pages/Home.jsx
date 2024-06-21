@@ -34,7 +34,7 @@ function Home(props) {
 
 
         Spotify.getNewReleases().then((newRel) => {
-console.log(newRel)
+            console.log(newRel)
             setNewReleases(newRel.albums.items);
             console.log(newReleases)
 
@@ -177,28 +177,27 @@ console.log(newRel)
 
 
 
-<div className='w-[100dvw] h-[100dvh]'>
+        <div className='w-[100dvw] h-[100dvh] '>
 
 
-<div className='flex w-full h-[85%] bgone'>
-
-
-        <div className='SIDEBAR  h-[100%] w-[20%]  '>
+            <div className='HeroContainer flex flex-col md:flex-row w-full h-[85%] bgone'>
 
 
 
+               <Sidebar SearchPageDiv={searchPage.current} HomePageDiv={HomePage.current} PlaylistPageDiv={PlaylistPage.current} userPfp={userPfp} userName={userName}/>
 
-            
+
+
+                <main className='MainPage   flex  grow-[7]  md:grow-[10]'></main>
+
+
+
+            </div>
+
+            <PlayerNav currentPlayingTrackInfo={currentPlayingTrackInfo} totalDuration={totalDuration} />
+
+
         </div>
-
-
-        <div className='mainPAGE  h-[100%] w-[80%]   '></div>
-
-
-</div>        
-
-        <PlayerNav currentPlayingTrackInfo={currentPlayingTrackInfo} totalDuration={totalDuration} />
-</div>
 
     </>)
 }

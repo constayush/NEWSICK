@@ -21,7 +21,7 @@ useEffect(()=>{
 
   return (
     
-    <div className='playerNav w-[100dvw] min-h-[15%] PLAYER   flex flex-col md:flex-row justify-evenly items-center p-[2rem]'>
+    <div className='playerNav w-[100dvw] h-[15%] PLAYER   flex flex-col md:flex-row justify-evenly items-center p-[2rem]'>
 
 
 

@@ -25,9 +25,15 @@ height: 100dvh;
   background: rgb(11,11,11);
   background: linear-gradient(315deg, rgba(11,11,11,1) 0%, rgba(29,33,33,1) 100%);
 }
-
-
-
+/* nav{
+  flex: 1 1 auto;
+}
+main{
+  flex: 3 1 auto;
+} */
+nav{
+  border-right: solid .1px #fff;
+}
 
 .bluegra{
     background: rgb(27,27,27);
@@ -60,7 +66,7 @@ background: linear-gradient(153deg, rgba(27,27,27,1) 0%, rgba(0,0,0,1) 100%);
 .normalfont{
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 400;
+   
     font-style: normal;
 }
 
@@ -210,6 +216,7 @@ width: 100%;
     -o-transition: all .4s ease-in-out;
     -webkit-transition: all .4s ease-in-out;
     transition: all .4s ease-in-out;
+    border: #fff solid .1px;
   }
   
   .bn632-hover:focus {
@@ -218,7 +225,7 @@ width: 100%;
   
   .bn632-hover.bn25 {
 
-    border: #fff solid .1px;
+    
 
     background-image: linear-gradient(
       to right,
