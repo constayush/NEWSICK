@@ -14,7 +14,7 @@ function Login() {
 
 
 
-      <h1 className='iconfont text-[#cdfdff] text-[10rem]'>NEWSICK</h1>
+      <h1 className='iconfont text-[#cdfdff] text-[5rem] md:text-[10rem]'>NEWSICK</h1>
      
       <a href={accessUrl} className="loginBtn text-[#cdfdff] text-[2rem]">
         <span className="top-key"></span>

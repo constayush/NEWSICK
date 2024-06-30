@@ -4,7 +4,9 @@ import PlayerNav from '../components/PlayerNav'
 import SpotifyWebApi from 'spotify-web-api-js'
 import { useState, useRef } from 'react'
 
-
+import listIcon from '../../public/asset/listIcon.svg'
+import searchIcon from '../../public/asset/searchIcon.svg'
+import homeIcon from '../../public/asset/homeIcon.svg'
 function Home(props) {
 
 
@@ -177,7 +179,7 @@ function Home(props) {
 
 
 
-        <div className='w-[100dvw] h-[100dvh] '>
+        {/* <div className='w-[100vw] h-[100dvh] '>
 
 
             <div className='HeroContainer flex flex-col md:flex-row w-full h-[85%] bgone'>
@@ -188,7 +190,7 @@ function Home(props) {
 
 
 
-                <main className='MainPage   flex  grow-[7]  md:grow-[10]'></main>
+                <main className='MainPage bg-red-300   flex  h-full md:h-full w-full overflow-auto'></main>
 
 
 
@@ -197,7 +199,81 @@ function Home(props) {
             <PlayerNav currentPlayingTrackInfo={currentPlayingTrackInfo} totalDuration={totalDuration} />
 
 
+        </div> */}
+
+
+
+
+
+
+        <div className='w-full h-[100dvh] flex flex-col bgone '>
+
+
+
+            {/* ////////////////////////////////////////////////////////////////////////  MAIN   //////////////////////////// */}
+
+
+            <div className=' flex lg:flex-row flex-col w-full flex-grow h-auto'>
+
+                {/* /////////////////////////// NAVBAR //////////////////////////////// */}
+
+
+                <nav className='side p-4 flex flex-col gap-4 justify-center items-center overflow-auto'>
+
+
+
+
+                    <div className='flex items-center justify-center flex-row lg:flex-col gap-2 '>
+                        <img src={userPfp} className='w-[2rem] h-[2rem] md:w-[3.5rem] md:h-[3.5rem] lg:w-[10rem] lg:h-[10rem] rounded-full' />
+                        <h1 className='text-[1rem]  lg:text-[1.5rem] font-bold text-white normalfont'>{userName}</h1>
+                    </div>
+
+
+
+
+<div className='flex flex-row lg:flex-col'>
+                    <button className='bn632-hover bn25  sidebarbtns w-[4rem] h-[2rem] md:w-[10rem]  md:h-[2rem] '><div className=' w-full  icoANiMATIONOnHover justify-center items-center flex gap-2 md:gap-6'><p className='hidden md:block'>Home  </p>   <img className=' w-[1.3rem] h-[1.3rem]' src={homeIcon}></img>  </div></button>
+                    <button className='bn632-hover bn25  sidebarbtns w-[4rem] h-[2rem] md:w-[10rem]  md:h-[2rem] '><div className=' w-full  icoANiMATIONOnHover justify-center items-center flex gap-2 md:gap-6'><p className='hidden md:block'>Search  </p> <img className=' w-[1.3rem] h-[1.3rem]' src={searchIcon}></img>  </div></button>
+                    <button className='bn632-hover bn25  sidebarbtns w-[4rem] h-[2rem] md:w-[10rem]  md:h-[2rem] '><div className=' w-full  icoANiMATIONOnHover justify-center items-center flex gap-2 md:gap-6'><p className='hidden md:block'>Playlist</p> <img className=' w-[1.3rem] h-[1.3rem]' src={listIcon}></img>   </div></button>
+</div>
+
+
+                </nav>
+
+                {/* /////////////////////////// HERO //////////////////////////////// */}
+
+                <div className='flex-grow'></div>
+
+
+            </div>
+
+
+            {/* ////////////////////////////////////////////////////////////////////////////////// PLAYER ///////////////////////// */}
+
+
+            <div className='w-full h-auto bg-[#4e4e4e] flex justify-center items-center overflow-auto'>
+
+
+                <input className='m-4' type='range'></input>
+
+
+            </div>
+
+
+
+
+
+
+
+
+
         </div>
+
+
+
+
+
+
 
     </>)
 }
